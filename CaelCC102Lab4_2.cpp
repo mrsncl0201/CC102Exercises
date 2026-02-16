@@ -31,24 +31,25 @@ int main()
             cin >> choice;
         } while (choice == 'y' || choice == 'Y');
 
-        cout << "\nProduct\t1\t2\t3\t4\tTotal\n";
-
+cout << "-------- --------- --------- --------- --------- -------\n";
         double grandTotal = 0;
 
         for (int i = 0; i < 5; i++)
         {
             double rowTotal = 0;
-            cout << i + 1 << "\t";
+            cout << i + 1 << "   |";
             for (int j = 0; j < 4; j++)
             {
-                cout << fixed << setprecision(2) << sales[i][j] << "\t";
+                cout << fixed << setprecision(2) << sales[i][j] << "|";
                 rowTotal += sales[i][j];
             }
             cout << rowTotal << endl;
             grandTotal += rowTotal;
         }
 
-        cout << "Total\t";
+       cout << "-------- --------- --------- --------- --------- -------\n";
+       cout << " Total  ";
+        
         for (int j = 0; j < 4; j++)
         {
             double colTotal = 0;
@@ -56,9 +57,10 @@ int main()
             {
                 colTotal += sales[i][j];
             }
-            cout << colTotal << "\t";
+            cout << fixed << setprecision(2) << setw(8) << colTotal << "|";
         }
-        cout << grandTotal << endl;
+       cout << fixed << setprecision(2) << setw(7) << grandTotal << "\n";
+        cout << "-------- --------- --------- --------- --------- -------\n";;
 
         cout << "\nWould you like to try again? (y/n): ";
         cin >> runAgain;
