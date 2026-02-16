@@ -48,7 +48,7 @@ int main()
             cout << fixed << setprecision(2) << average << endl;
         }
 
-        cout << "\nRun again? (y/n): ";
+        cout << "\nDo you want to try again? (y/n): ";
         cin >> repeat;
 
     } while (repeat == 'y' || repeat == 'Y');
