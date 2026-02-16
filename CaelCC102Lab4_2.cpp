@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -31,25 +32,32 @@ int main()
             cin >> choice;
         } while (choice == 'y' || choice == 'Y');
 
-cout << "-------- --------- --------- --------- --------- -------\n";
+        cout << "-------- --------- --------- --------- --------- -------\n";
+        cout << "Product ";
+        for (int j = 1; j <= 4; j++)
+        {
+            cout << setw(8) << j << " ";
+        }
+        cout << " Total  \n";
+        cout << "-------- --------- --------- --------- --------- -------\n";
+
         double grandTotal = 0;
 
         for (int i = 0; i < 5; i++)
         {
             double rowTotal = 0;
-            cout << i + 1 << "   |";
+            cout << "   " << i + 1 << "    ";
             for (int j = 0; j < 4; j++)
             {
-                cout << fixed << setprecision(2) << sales[i][j] << "|";
+                cout << fixed << setprecision(2) << setw(8) << sales[i][j] << " ";
                 rowTotal += sales[i][j];
             }
-            cout << rowTotal << endl;
+            cout << fixed << setprecision(2) << setw(7) << rowTotal << "\n";
             grandTotal += rowTotal;
         }
 
-       cout << "-------- --------- --------- --------- --------- -------\n";
-       cout << " Total  ";
-        
+        cout << "-------- --------- --------- --------- --------- -------\n";
+        cout << " Total  ";
         for (int j = 0; j < 4; j++)
         {
             double colTotal = 0;
@@ -57,10 +65,10 @@ cout << "-------- --------- --------- --------- --------- -------\n";
             {
                 colTotal += sales[i][j];
             }
-            cout << fixed << setprecision(2) << setw(8) << colTotal << "|";
+            cout << fixed << setprecision(2) << setw(8) << colTotal << " ";
         }
-       cout << fixed << setprecision(2) << setw(7) << grandTotal << "\n";
-        cout << "-------- --------- --------- --------- --------- -------\n";;
+        cout << fixed << setprecision(2) << setw(7) << grandTotal << "\n";
+        cout << "-------- --------- --------- --------- --------- -------\n";
 
         cout << "\nWould you like to try again? (y/n): ";
         cin >> runAgain;
