@@ -42,7 +42,7 @@ int main() {
         }
     }
 
-    cout << "Copy done.\n";
+    cout << "File successfully copied!.\n";
 
     file2.close();
     file3.close();
